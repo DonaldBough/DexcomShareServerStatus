@@ -2,6 +2,7 @@
 
 let chai = require('chai');
 let sinon = require('sinon');
+let moment = require('moment');
 const FakeChannel = require('./fake-channel.js');
 
 describe('Notifier', () => {
@@ -32,6 +33,21 @@ describe('Notifier', () => {
     let dexcomStatusService = {getStatus: () => 500};
     let channels = [new FakeChannel()];
     let notifier = new Notifier(dexcomStatusService, channels);
+    
+    //act
+    await notifier.notifyOnBadResponse();
+    
+    //assert
+    notifier.channels.forEach(channel => {
+      chai.expect(channel.notify.calledOnce).to.be.true;
+    });
+    
+    it('only notifies channels once a day', async () => {
+    //arrange
+    let dexcomStatusService = {getStatus: () => 500};
+    let channels = [new FakeChannel()];
+    let notifier = new Notifier(dexcomStatusService, channels);
+    
     
     //act
     await notifier.notifyOnBadResponse();

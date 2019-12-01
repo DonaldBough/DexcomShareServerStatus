@@ -1,0 +1,11 @@
+'use strict';
+
+let chai = require('chai');
+let sinon = require('sinon');
+const FakeChannel = require('./fake-channel.js');
+
+describe('FacebookChannel', () => {
+  it('posts to Facebook on notify()', async () => {
+
+  });
+});
