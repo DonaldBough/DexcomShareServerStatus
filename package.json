@@ -1,0 +1,35 @@
+{
+  "name": "dexcomshareserverstatus",
+  "version": "0.0.1",
+  "description": "Polls Dexcom Shares server and posts to social media channels if the servers are down.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --recursive ./test/\"*test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonaldBough/DexcomShareServerStatus.git"
+  },
+  "keywords": [
+    "Dexcom",
+    "Share",
+    "DexcomShare",
+    "Nightscout"
+  ],
+  "author": "Donald Bough",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonaldBough/DexcomShareServerStatus/issues"
+  },
+  "homepage": "https://github.com/DonaldBough/DexcomShareServerStatus#readme",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "moment": "^2.24.0",
+    "sinon": "^7.5.0"
+  }
+}
